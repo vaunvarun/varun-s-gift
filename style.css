@@ -1,137 +1,75 @@
-.container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f2f2f2;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 200px;
-    height: 200px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: heartbeat 2s infinite;
-}
-
-.text {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px;
-    font-weight: bold;
-    color: #000;
+    height: 100vh;
+    background-color: #f0f4f8;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .heart {
+    font-size: 5rem;
+    color: #e74c3c;
+    display: inline-block;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .heart-inner {
+    display: inline-block;
+    transform-origin: center;
+  }
+  
+  .message h1,
+  .message h2 {
     opacity: 0;
-    animation: text-appear 2s 2s forwards;
-}
-
-.ring-container {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    animation: ring-appear 2s 3s forwards;
-}
-
-.ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: #ff0000;
-    border-radius: 50%;
-}
-
-.fireworks-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.firework {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: firework 2s infinite;
-}
-
-.confetti-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.confetti {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: confetti 2s infinite;
-}
-
-@keyframes heartbeat {
+    color: #333;
+    font-size: 2rem;
+    animation: fadeIn 3s forwards;
+  }
+  
+  .message h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: lighter;
+  }
+  
+  .message h1 {
+    animation-delay: 1s;
+  }
+  
+  .message h2 {
+    animation-delay: 2s;
+  }
+  
+  /* Heart animation */
+  @keyframes pulse {
     0% {
-        transform: translate(-50%, -50%) scale(0);
+      transform: scale(1);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1.2);
+      transform: scale(1.2);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
+      transform: scale(1);
     }
-}
-
-@keyframes text-appear {
-    0% {
-        opacity: 0;
+  }
+  
+  /* Fade-in animation for text */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes ring-appear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes firework {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(2);
-    }
-    100% {
-        transform: translate(-50%, -
+  }
+  
