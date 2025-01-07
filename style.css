@@ -1,3 +1,4 @@
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +6,12 @@
   }
   
   body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    position: relative;
+    background-color: #f8f8f8;
   }
   
   .container {
@@ -20,56 +19,76 @@
   }
   
   .heart {
-    font-size: 5rem;
-    color: #e74c3c;
-    display: inline-block;
-    animation: pulse 1.5s infinite ease-in-out;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: heartbeat 1s ease-in-out infinite;
+    margin-bottom: 20px;
   }
   
-  .heart-inner {
-    display: inline-block;
-    transform-origin: center;
+  .heart:before,
+  .heart:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
   }
   
-  .message h1,
-  .message h2 {
-    opacity: 0;
-    color: #333;
-    font-size: 2rem;
-    animation: fadeIn 3s forwards;
+  .heart:before {
+    top: -50px;
+    left: 0;
   }
   
-  .message h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    font-weight: lighter;
+  .heart:after {
+    left: -50px;
+    top: 0;
   }
   
   .message h1 {
-    animation-delay: 1s;
+    font-size: 2.5rem;
+    color: #e63946;
+    margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
   }
   
-  .message h2 {
-    animation-delay: 2s;
+  button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   
-  /* Heart animation */
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
+  .yes-btn {
+    background-color: #2a9d8f;
+    color: white;
   }
   
-  /* Fade-in animation for text */
+  .no-btn {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
   @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
   
