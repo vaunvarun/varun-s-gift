@@ -32,47 +32,68 @@
     animation: text-appear 2s 2s forwards;
 }
 
-.pondati {
+.ring-container {
     position: absolute;
-    bottom: 0;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, 0);
-    width: 800px;
-    height: 200px;
-    background-color: #007bff;
-    border-radius: 10px 10px 0 0;
-}
-
-.water {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: #66CCCC;
-    border-radius: 0 0 10px 10px;
-}
-
-.lotus {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
-    background-color: #FFC080;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: ring-appear 2s 3s forwards;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
     border-radius: 50%;
 }
 
-.flowers {
+.fireworks-container {
     position: absolute;
-    bottom: 20%;
-    left: 20%;
-    width: 50px;
-    height: 50px;
-    background-color: #FF69B4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.firework {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
     border-radius: 50%;
-    animation: flowers-appear 2s 3s forwards;
+    animation: firework 2s infinite;
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.confetti {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    animation: confetti 2s infinite;
 }
 
 @keyframes heartbeat {
@@ -96,7 +117,7 @@
     }
 }
 
-@keyframes flowers-appear {
+@keyframes ring-appear {
     0% {
         opacity: 0;
     }
@@ -104,3 +125,13 @@
         opacity: 1;
     }
 }
+
+@keyframes firework {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+    100% {
+        transform: translate(-50%, -
