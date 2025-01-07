@@ -3,27 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You Proposal Animation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Love Proposal Animation</title>
+    <style>
+        /* Body and overall layout */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffcccc;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Centering text and heart */
+        .container {
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: fadeInUp 2s forwards;
+        }
+
+        /* Heart shape */
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            transform-origin: center;
+            opacity: 0;
+        }
+
+        /* Proposal text */
+        .text {
+            font-size: 30px;
+            color: #fff;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInText 3s forwards;
+            animation-delay: 2.5s;
+        }
+
+        /* Animation for fading in container */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Heart pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Text fade-in animation */
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="heart"></div>
-        <div class="text">I Love You</div>
-        <div class="ring-container">
-            <div class="ring"></div>
-        </div>
-        <div class="fireworks-container">
-            <div class="firework"></div>
-            <div class="firework"></div>
-            <div class="firework"></div>
-        </div>
-        <div class="confetti-container">
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-        </div>
+        <div class="heart">❤️</div>
+        <div class="text">Will you be mine?</div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Optional JavaScript to trigger the animation sequence or add sound effects
+        window.onload = () => {
+            const container = document.querySelector('.container');
+            container.style.animation = 'fadeInUp 2s forwards';
+        };
+    </script>
+    <audio id="proposal-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+    <script>
+        window.onload = () => {
+            const sound = document.getElementById("proposal-sound");
+            sound.play();
+        };
+    </script>
+    
 </body>
 </html>
